@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(medianlib CXX)
+
+INCLUDE_DIRECTORIES("${PROJECT_SOURCE_DIR}/include")
+
+# Target names should not be reserved and should match a validity pattern.
+IF(POLICY CMP0037)
+    cmake_policy(SET CMP0037 OLD)
+ENDIF(POLICY CMP0037)
+
+LIST (APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/tools/cmake")
+
+INCLUDE (CheckCXXCompilerFlag)
+    CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
+IF (COMPILER_SUPPORTS_CXX14)
+    SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+ELSE (COMPILER_SUPPORTS_CXX14)
+    MESSAGE (FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++14 support.")
+ENDIF(COMPILER_SUPPORTS_CXX14)
+
+FIND_PACKAGE (CppUnit REQUIRED)
+
+ADD_SUBDIRECTORY(test)
+
+
+
+

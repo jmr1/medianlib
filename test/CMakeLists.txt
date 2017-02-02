@@ -1,0 +1,7 @@
+FILE (GLOB_RECURSE test_SRCS *.cpp *.cxx *.cc *.C *.c *.h *.hpp)
+SET (test_LIBS ${CPPUNIT_LIBRARIES})
+SET (test_BIN test)
+INCLUDE_DIRECTORIES(${CPPUNIT_INCLUDE_DIR})
+
+ADD_EXECUTABLE(${test_BIN} ${test_SRCS})
+TARGET_LINK_LIBRARIES(${test_BIN} ${test_LIBS})
