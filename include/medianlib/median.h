@@ -2,6 +2,7 @@
 #define MEDIAN_H
 
 #include "quickmedian.h"
+#include "quickselectmedian.h"
 
 namespace medianlib {
 

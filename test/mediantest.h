@@ -13,6 +13,7 @@ public:
 
     CPPUNIT_TEST_SUITE (MedianTest);
     CPPUNIT_TEST (quickMedianTest);
+    CPPUNIT_TEST (quickSelectMedianTest);
     CPPUNIT_TEST_SUITE_END ();
 
 public:
@@ -21,6 +22,7 @@ public:
 
 protected:
     void quickMedianTest();
+    void quickSelectMedianTest();
 
 private:
     void gen_data(std::vector<int> &vec, int start);
