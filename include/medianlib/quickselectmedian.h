@@ -41,16 +41,16 @@ private:
         while (left < right)
         {
             const auto pivot = vec[k];
-            swap(&vec[k], &vec[right]);
+            swap(vec[k], vec[right]);
             for (auto i = pos = left; i < right; ++i)
             {
                 if (vec[i] < pivot)
                 {
-                    swap(&vec[i], &vec[pos]);
+                    swap(vec[i], vec[pos]);
                     pos++;
                 }
             }
-            swap(&vec[right], &vec[pos]);
+            swap(vec[right], vec[pos]);
             if (pos == k)
                 break;
             if (pos < k)

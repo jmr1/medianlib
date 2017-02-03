@@ -4,11 +4,11 @@
 namespace medianlib {
 
 template <typename T>
-void swap(T *value1, T *value2)
+void swap(T &value1, T &value2)
 {
-   T temp = *value1;
-   *value1 = *value2;
-   *value2 = temp;
+   T temp = value1;
+   value1 = value2;
+   value2 = temp;
 }
 
 template <typename T>
@@ -24,10 +24,10 @@ int partition(T *vec, int left, int right, int pivot)
 
         if(leftPointer >= rightPointer)
             break;
-        swap(&vec[leftPointer], &vec[rightPointer]);
+        swap(vec[leftPointer], vec[rightPointer]);
     }
 
-    swap(&vec[leftPointer], &vec[right]);
+    swap(vec[leftPointer], vec[right]);
     return leftPointer;
 }
 
