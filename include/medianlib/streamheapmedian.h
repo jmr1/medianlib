@@ -146,7 +146,7 @@ public:
     }
 
 private:
-    void addNumber(int value)
+    void addNumber(const T &value)
     {
         maxHeap.insert(value);
 
