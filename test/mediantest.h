@@ -15,6 +15,7 @@ public:
     CPPUNIT_TEST (quickMedianTest);
     CPPUNIT_TEST (quickSelectMedianTest);
     CPPUNIT_TEST (streamHeapMedianTest);
+    CPPUNIT_TEST (streamInsertionMedianTest);
     CPPUNIT_TEST_SUITE_END ();
 
 public:
@@ -25,6 +26,7 @@ protected:
     void quickMedianTest();
     void quickSelectMedianTest();
     void streamHeapMedianTest();
+    void streamInsertionMedianTest();
 
 private:
     void gen_data(std::vector<int> &vec, int start);

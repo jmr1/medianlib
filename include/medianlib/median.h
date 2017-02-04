@@ -4,6 +4,7 @@
 #include "quickmedian.h"
 #include "quickselectmedian.h"
 #include "streamheapmedian.h"
+#include "streaminsertionmedian.h"
 
 namespace medianlib {
 

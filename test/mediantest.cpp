@@ -71,3 +71,31 @@ void MedianTest::streamHeapMedianTest()
         }
     }
 }
+
+void MedianTest::streamInsertionMedianTest()
+{
+    std::vector<int> tmp11;
+    medianlib::StreamInsertionMedian<vec11_type> si_m11(vec11.size());
+    for(const auto &x : vec11)
+    {
+        tmp11.push_back(x);
+        const auto median = si_m11.find(x);
+
+        auto first = tmp11.begin();
+        auto last = tmp11.end();
+        auto middle = first + (last - first) / 2;
+        auto middle2 = first + (last - first) / 2 - 1;
+        if(tmp11.size() % 2)
+        {
+            std::nth_element(first, middle, last);
+            CPPUNIT_ASSERT_EQUAL(static_cast<decltype(median)>(*middle), median);
+        }
+        else
+        {
+            std::nth_element(first, middle, last);
+            std::nth_element(first, middle2, last);
+            const auto averaged_median = medianlib::average(*middle, *middle2);
+            CPPUNIT_ASSERT_EQUAL(averaged_median, median);
+        }
+    }
+}
