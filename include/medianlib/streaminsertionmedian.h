@@ -9,7 +9,7 @@ namespace medianlib {
 
 
 /// Finding median of stream of numbers received so far
-/// Complexity of finding median is O(n2)
+/// Complexity of finding median is O(1), insertion O(n2)
 template <typename T>
 class StreamInsertionMedian
 {
